@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-    <title>Flag Guesser</title>
-</head>
-<link rel='stylesheet' href='./public/library/style.css'>
-
-<body>
-    <div class='container'>
-        <div class='top_container'>
-            <button id='back' class='back'>◀</button>
-            <div class='library_container'>
-                <img src='../../images/library.png'>
-                <p class='library_label'>Library</p>
+    <head>
+        <title>Flag Guesser</title>
+        <link rel='stylesheet' href='./public/library/style.css'>
+    </head>
+    <body>
+        <div class='container centre'>
+            <div class='top-container'>
+                <img id='back' class='back' src='./public/library/images/back.png'>
+                <div class='library-container'>
+                    <img class='library-img' src='./public/library/images/library.png'>
+                    <p class='library-label'>Library</p>
+                </div>
+            </div>
+            <div class='bottom-container'>
+                <div id='countries-container' class='countries-container'></div>
+                <!-- <div class='scrollbar-container'>
+                    <button id='up' class='up'>▲</button>
+                    <button id='down' class='down'>▼</button>
+                </div> -->
             </div>
         </div>
-        <div class='bottom_container'>
-            <div id='countries_container' class='countries_container'></div>
-            <!-- <div class='scrollbar_container'>
-                <button id='up' class='up'>▲</button>
-                <button id='down' class='down'>▼</button>
-            </div> -->
-        </div>
-    </div>
-    <script src='./public/library/script.js'></script>
-</body>
-
+        <script src='./public/library/script.js'></script>
+    </body>
 </html>

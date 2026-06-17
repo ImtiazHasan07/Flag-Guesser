@@ -3,26 +3,29 @@ html {
     user-select: none;
 }
 
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
     background-color: #33ccff;
     width: 500px;
     height: 800px;
     text-align: center;
-    margin-left: 35%;
 }
 
 .flag {
-    font-size: 50px;
     margin-bottom: -15%;
 }
 
-.top_container {
+.top-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: -15%;
 }
 
-.scrollbar_container {
+.scrollbar-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,32 +33,38 @@ html {
     margin-left: 90%;
 }
 
-.library_container {
+.library-container {
+    margin-top: 2%;
+    margin-right: 2%;
     display: flex;
     justify-content: space-between;
-    gap: 10%;
+    gap: 1%;
     flex-direction: row;
 }
 
-.country_container {
+.country-container {
     display: flex;
     flex-direction: row;
+    margin-left: 5%;
+    margin-bottom: 2%;
 }
 
 .flag {
     margin-top: 0;
     margin-right: 3%;
+    width: 15%;
+    height: 50px;
+    object-fit: cover;
 }
 
-img {
+.library-img {
+    margin-left: -10%;
     width: 50px;
     height: 50px;
     object-fit: cover;
-    margin-left: -50%;
-    /* margin-right: 10%; */
 }
 
-.library_label {
+.library-label {
     margin-top: 1%;
     font-size: 40px;
     font-weight: bold;
@@ -63,10 +72,10 @@ img {
 
 .back {
     cursor: pointer;
-    margin-left: 1%;
-    margin-top: 3%;
+    width: 5%;
+    margin-left: 4%;
+    margin-top: 5%;
     align-self: flex-start;
-    font-size: 30px;
     background-color: transparent;
     border: none
 }
@@ -86,13 +95,15 @@ img {
     border: none
 }
 
-.countries_container {
+.countries-container {
     margin-left: 5%;
+    /* overflow-y: scroll; */
+    scrollbar-width: none;
     overflow-y: scroll;
     height: 650px;
     width: 475px;
 }
 
-.bottom_container {
-    margin-top: 20%;
+.bottom-container {
+    margin-top: 15%;
 }

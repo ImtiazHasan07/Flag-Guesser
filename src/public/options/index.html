@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-    <title>Flag Guesser</title>
-</head>
-<link rel='stylesheet' href='./public/options/style.css'>
-
-<body>
-    <div class='container'>
-        <button id='back' class='back'>◀</button>
-        <div class='sound_container'>
-            <h2>SOUND</h2>
-            <input type='checkbox'>
-            <div class='slider round'></div>
-        </div>
-        <div class='flag_num_container'>
-            <form>
-                <h2>NUMBER OF FLAGS</h2>
-                <input type='radio' id='10' name='flag_num' value=10>
-                <label for='10'>10</label>
-                <br>
-                <input type='radio' id='25' name='flag_num' value=25>
-                <label for='25'>25</label>
-                <br>
-                <input type='radio' id='50' name='flag_num' value=50>
-                <label for='50'>50</label>
-                <br>
-                <input type='radio' id='100' name='flag_num' value=100>
-                <label for='100'>100</label>
-                <br>
-                <input type='radio' id='197' name='flag_num' value=197>
-                <label for='197'>197</label>
-            </form>
-        </div>
-        <div class='flags_container'>
-            <h2>FLAGS</h2>
-            <div class='africa_container'>
-                <label for 'africa'>AFRICA</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
-            </div>
-            <div class='asia_container'>
-                <label for 'africa'>ASIA</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
-            </div>
-            <div class='europe_container'>
-                <label for 'africa'>EUROPE</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
-            </div>
-            <div class='north_america_container'>
-                <label for 'africa'>NORTH AMERICA</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
-            </div>
-            <div class='south_america_container'>
-                <label for 'africa'>SOUTH AMERICA</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
-            </div>
-            <div class='oceania_container'>
-                <label for 'africa'>OCEANIA</label>
-                <input type='checkbox'>
-                <div class='slider round'></div>
+    <head>
+        <title>Flag Guesser</title>
+        <link rel='stylesheet' href='./public/options/style.css'>
+    </head>
+    <body>
+        <div class='container centre'>
+            <img id='back' class='back' src='./public/options/images/back.png'>
+            <div class='bottom-container'>
+                <div class='sound-container'>
+                    <h2>SOUND</h2>
+                    <input id='sound' type='checkbox'>
+                    <div class='slider round'></div>
+                </div>
+                <div class='flag-num-container'>
+                    <for id='flag-options'>
+                        <h2>NUMBER OF FLAGS</h2>
+                        <div class='slider-container'>
+                            <label for='flags-range'>0</label>
+                            <input id='flags-range' class='flags-range' type='range' name='flag-num' min='0' max='197' value='25'>
+                            <label id='current-value' class='current-value' for='flags-range'>value</label>
+                            <label id='max-value' for='flags-range'>197</label>
+                        </div>
+                    </form>
+                </div>
+                <div class='flags-container'>
+                    <h2>FLAGS</h2>
+                    <div class='africa-container'>
+                        <label for='africa'>AFRICA</label>
+                        <input id='africa' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                    <div class='asia-container'>
+                        <label for='asia'>ASIA</label>
+                        <input id='asia' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                    <div class='europe-container'>
+                        <label for='europe'>EUROPE</label>
+                        <input id='europe' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                    <div class='north-america-container'>
+                        <label for='north-america'>NORTH AMERICA</label>
+                        <input id='north-america' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                    <div class='south-america-container'>
+                        <label for='south-america'>SOUTH AMERICA</label>
+                        <input id='south-america' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                    <div class='oceania-container'>
+                        <label for='oceania'>OCEANIA</label>
+                        <input id='oceania' class='flags-checkbox country' type='checkbox'>
+                        <div class='slider round'></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src='./public/options/script.js'></script>
-</body>
-
+        <script src='./public/options/script.js'></script>
+    </body>
 </html>

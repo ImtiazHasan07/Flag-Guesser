@@ -3,20 +3,49 @@ html {
     user-select: none;
 }
 
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
     background-color: #33ccff;
     width: 500px;
     height: 800px;
-    text-align: center;
-    margin-left: 35%;
+    /* text-align: center; */
 }
 
 .back {
-    display: flex;
     cursor: pointer;
-    margin-left: 1%;
-    margin-top: 3%;
-    font-size: 30px;
+    width: 5%;
+    margin-left: 4%;
+    margin-top: 5%;
+    align-self: flex-start;
     background-color: transparent;
     border: none
 }
+
+.bottom-container {
+    margin-left: 5%;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.flags-range {
+    width: 75%;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+/* .current-value {
+} */

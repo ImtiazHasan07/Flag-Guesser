@@ -3,15 +3,25 @@ html {
     user-select: none;
 }
 
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
     background-color: #33ccff;
     width: 500px;
     height: 800px;
     text-align: center;
-    margin-left: 35%;
 }
 
-button {
+.header {
+    padding-top: 25%;
+    font-size: 50px;
+    color: #000000;
+}
+
+.button {
     color: #000000;
     font-size: 30px;
     margin: 5px;
@@ -23,35 +33,52 @@ button {
     cursor: pointer;
 }
 
-h1 {
-    font-size: 50px;
-    color: #ffffff;
-    font-weight: 750;
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin-bottom: 5%;
+}
+
+.circle {
+    display: grid;
+    /* width: 150px; */
+    /* height: 150px; */
+    width: 150px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 75px;
+    /* padding: 50px; */
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 50%;
 }
 
 .score {
-    display: table-cell;
     background-color: #009b2e;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 50%;
 }
 
-.total_score {
-    display: table-cell;
+.connector {
+    font-size: 35px;
+}
+
+.total-score {
     background-color: #ffb900;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 50%;
 }
 
-.score {
+
+/* .total-score {
+    margin-left: 5%;
+    padding: 10%;
+    background-color: #ffb900;
+    border-radius: 50%;
+} */
+
+/* .score {
     align-self: center;
-}
+} */
 
 .page {
     margin-right: 1%;

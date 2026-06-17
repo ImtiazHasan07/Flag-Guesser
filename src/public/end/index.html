@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-    <title>Flag Guesser</title>
-</head>
-<link rel='stylesheet' href='./public/end/style.css'>
-
-<body>
-    <div class='container'>
-        <h1>Score:</h1>
-        <h2><span id='score' class='score'>$score</span> out of <span id='total_score' class='total_score'>$total_score</span></h2>
-        <button id='play_again'>Play again</button>
-        <br>
-        <button id='main_menu'>Main Menu</button>
-    </div>
-    <script src='./public/end/script.js'></script>
-</body>
-
+    <head>
+        <title>Flag Guesser</title>
+        <link rel='stylesheet' href='./public/end/style.css'>
+    </head>
+    <body>
+        <div class='container centre'>
+            <h1 class='header'>Score:</h1>
+            <div class='score-container centre'>
+                <span id='score' class='score circle centre'>$score</span>
+                <span class='connector'>out of</span>
+                <span id='total-score' class='total-score circle centre'>$total-score</span>
+            </div>
+            <button id='play-again' class='button'>Play again</button>
+            <br>
+            <button id='main-menu' class='button'>Main Menu</button>
+        </div>
+        <script src='./public/end/script.js'></script>
+    </body>
 </html>

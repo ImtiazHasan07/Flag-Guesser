@@ -1,15 +1,18 @@
-let score = document.getElementById('score')
-let total_score = document.getElementById('total_score')
-let playAgain = document.getElementById('play_again')
-let mainMenu = document.getElementById('main_menu')
+let score = localStorage.getItem('score') ? localStorage.getItem('score') : 0;
+let totalScore = localStorage.getItem('flags-number') ? localStorage.getItem('flags-number') : 25;
 
-score = 0
-total_score = 0
+console.log(score)
 
-playAgain.addEventListener('click', () => {
-    window.location.href = '../main'    
+document.body.innerHTML = document.body.innerHTML.replace('$score', score);
+document.body.innerHTML = document.body.innerHTML.replace('$total-score', totalScore);
+
+let playAgain = document.getElementById('play-again');
+let mainMenu = document.getElementById('main-menu');
+
+playAgain.addEventListener('click', (event) => {
+    window.location.href = '../main';
 })
 
-mainMenu.addEventListener('click', () => {
-    window.location.href = '../menu'    
+mainMenu.addEventListener('click', (event) => {
+    window.location.href = '../menu';
 })

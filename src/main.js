@@ -32,5 +32,3 @@ app.get('/:page', (req, res) => {
 app.listen(port, () => {
   console.log(`http://localhost:${port}/`);
 });
-
-// require('./discord-bot/main.js');
