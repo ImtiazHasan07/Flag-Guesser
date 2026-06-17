@@ -104,7 +104,7 @@ fetchCountries(continents).then((fetchedCountries) => {
     setupGame(fetchedCountries);
 });
 
-let backButton = document.getElementById('back')
+let backButton = document.getElementById('back-button')
 backButton.addEventListener('click', (event) => {
     window.location.href = '../menu'
     return;

@@ -54,12 +54,12 @@ html {
     margin-bottom: -15%;
 }
 
-.back {
+.back-button {
     cursor: pointer;
-    width: 5%;
-    margin-left: 4%;
-    margin-top: 5%;
+    margin-left: 1%;
+    margin-top: 3%;
     align-self: flex-start;
+    font-size: 30px;
     background-color: transparent;
     border: none
 }

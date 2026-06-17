@@ -3,12 +3,16 @@ html {
     user-select: none;
 }
 
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
     background-color: #33ccff;
     width: 500px;
     height: 800px;
     text-align: center;
-    margin-left: 35%;
 }
 
 .button {
@@ -23,9 +27,6 @@ html {
     cursor: pointer;
 }
 
-.next {
-    margin-top: 5%
-}
 
 .flag {
     font-size: 450px;
@@ -36,8 +37,10 @@ html {
     background-color: #ffffff;
 }
 
-.next {
+.next-button {
+    display: fixed;
     background-color: #ffbb00;
+    margin-top: 5%;
 }
 
 .top-container {
@@ -46,7 +49,7 @@ html {
     margin-bottom: -15%;
 }
 
-.back {
+.back-button {
     cursor: pointer;
     margin-left: 1%;
     margin-top: 3%;

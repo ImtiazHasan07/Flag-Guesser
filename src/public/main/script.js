@@ -1,12 +1,12 @@
 let countries;
 let score = document.getElementById('score')
 let page = document.getElementById('page')
-let pages = 25;
+let totalPages = 25;
 
 score.innerText = 0;
 page.innerText = 1;
 
-document.body.innerHTML = document.body.innerHTML.replace('$pages', pages);
+document.body.innerHTML = document.body.innerHTML.replace('$totalPages', totalPages);
 
 fetch('https://restcountries.com/v3.1/all')
     .then((response) => response.json())
@@ -26,7 +26,7 @@ fetch('https://restcountries.com/v3.1/all')
     
             flag.innerText = chosenCountry.flag
 
-            let backButton = document.getElementById('back')
+            let backButton = document.getElementById('back-button')
             backButton.addEventListener('click', (event) => {
                 window.location.href = '../menu' 
                 return
@@ -60,11 +60,12 @@ fetch('https://restcountries.com/v3.1/all')
                         correctOption.style['background-color'] = '#009a30'
                     }
     
-                    let nextButton = document.getElementById('next')
+                    let nextButton = document.getElementById('next-button')
                     nextButton.addEventListener('click', (event) => {
-                        if (parseInt(page.innerText) === parseInt(pages)) {
+                        if (parseInt(page.innerText) === parseInt(totalPages)) {
+                        localStorage.setItem('score', score.innerText)
                         window.location.href = '../end' 
-                        return
+                        return;
                         }
                         page = document.getElementById('page')
                         page.innerText ++

@@ -30,7 +30,7 @@ fetch('https://restcountries.com/v3.1/all')
 
             flag.src = chosenCountry.flag
 
-            let backButton = document.getElementById('back')
+            let backButton = document.getElementById('back-button')
             backButton.addEventListener('click', (event) => {
                 window.location.href = '../menu'
                 return

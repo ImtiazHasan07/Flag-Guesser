@@ -4,22 +4,22 @@
 
 <head>
     <title>Flag Guesser</title>
+    <link rel='stylesheet' href='./public/main/style.css'>
 </head>
-<link rel='stylesheet' href='./public/main/style.css'>
 
 <body>
-    <div class='container'>
+    <div class='container centre'>
         <div class='top-container'>
-            <button id='back' class='back'>◀</button>
+            <button id='back-button' class='back-button'>◀</button>
             <h1 class='content score'>Score: <span id='score'>$score</span></h1>
-            <h1 class='content page'><span id='page'>$page</span>/$pages</h2>
+            <h1 class='content page'><span id='page'>$page</span>/$totalPages</h2>
         </div>
         <div id='flag' class='flag'></div>
         <button class='button options'>a</button>
         <button class='button options'>b</button>
         <button class='button options'>c</button>
         <button class='button options'>d</button>
-        <button id='next' class='button next'>Next</button>
+        <button id='next-button' class='next-button button'>Next</button>
     </div>
     <script src='./public/main/script.js'></script>
 </body>

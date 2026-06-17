@@ -37,7 +37,7 @@ countries.forEach((element) => {
     })
 })
 
-let backButton = document.getElementById('back')
+let backButton = document.getElementById('back-button')
 backButton.addEventListener('click', (event) => {
     window.location.href = '../menu'
     return;
