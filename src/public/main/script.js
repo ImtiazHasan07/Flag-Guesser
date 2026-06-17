@@ -28,7 +28,7 @@ fetch('https://restcountries.com/v3.1/all')
 
             let backButton = document.getElementById('back')
             backButton.addEventListener('click', (event) => {
-                window.location.href = '../menu/index.html' 
+                window.location.href = '../menu' 
                 return
             }, { once : true })
     
@@ -63,7 +63,7 @@ fetch('https://restcountries.com/v3.1/all')
                     let nextButton = document.getElementById('next')
                     nextButton.addEventListener('click', (event) => {
                         if (parseInt(page.innerText) === parseInt(pages)) {
-                        window.location.href = '../end/index.html' 
+                        window.location.href = '../end' 
                         return
                         }
                         page = document.getElementById('page')

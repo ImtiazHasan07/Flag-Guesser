@@ -2,7 +2,7 @@ let backButton = document.getElementById('back')
 let countries_container = document.getElementById('countries_container')
 
 backButton.addEventListener('click', (event) => {
-    window.location.href = '../menu/index.html'
+    window.location.href = '../menu'
     return
 }, {
     once: true

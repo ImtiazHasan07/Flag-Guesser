@@ -7,9 +7,9 @@ score = 0
 total_score = 0
 
 playAgain.addEventListener('click', () => {
-    window.location.href = '../main/index.html'    
+    window.location.href = '../main'    
 })
 
 mainMenu.addEventListener('click', () => {
-    window.location.href = '../menu/index.html'    
+    window.location.href = '../menu'    
 })

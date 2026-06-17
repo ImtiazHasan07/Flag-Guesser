@@ -2,14 +2,15 @@ let play = document.getElementById('play')
 let options = document.getElementById('options')
 let library = document.getElementById('library')
 
-play.addEventListener('click', () => {
-    window.location.href = '../main/index.html'
+play.addEventListener('click', (event) => {
+    window.location.href = '../main'
 })
 
-options.addEventListener('click', () => {
-    window.location.href = '../options/index.html'
+options.addEventListener('click', (event) => {
+    window.location.href = '../options'
 })
 
-library.addEventListener('click', () => {
-    window.location.href = '../library/index.html'
+library.addEventListener('click', (event) => {
+    console.log('hi')
+    window.location.href = ''
 })
