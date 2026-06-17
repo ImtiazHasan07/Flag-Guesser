@@ -1,5 +1,4 @@
-
-let enableSound = sessionStorage.getItem('sound') ? sessionStorage.getItem('sound') : true;
+let enableSound = localStorage.getItem('sound') === 'true' ? true : false;
 function playSound(soundEffect) {
     if (JSON.parse(enableSound)) {
       soundEffect.play();

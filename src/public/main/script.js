@@ -2,7 +2,7 @@ let score = document.getElementById('score');
 let page = document.getElementById('page');
 let continents = localStorage.getItem('continents') ? localStorage.getItem('continents') : ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania'];
 let totalPages = localStorage.getItem('flags-number') ? localStorage.getItem('flags-number') : 25;
-let enableSound = sessionStorage.getItem('sound') ? sessionStorage.getItem('sound') : true;
+let enableSound = localStorage.getItem('sound') === 'true' ? true : false;
 
 score.innerText = 0;
 page.innerText = 1;
@@ -36,16 +36,16 @@ async function fetchCountries(continents) {
 }
 
 function getRandomCountry(countries, options) {
-  let randomCountry = countries.filter(
-    (country) => !options || !options.includes(country)
-  )[Math.floor(Math.random() * countries.length)];
-  return randomCountry;
+    let randomCountry = countries.filter(
+        (country) => !options || !options.map((option) => option.innerText).includes(country)
+    )[Math.floor(Math.random() * countries.length)];
+    return randomCountry;
 }
 
 function playSound(soundEffect) {
-  if (JSON.parse(enableSound)) {
-    soundEffect.play();
-  }
+    if (JSON.parse(enableSound)) {
+        soundEffect.play();
+    }
 }
 
 async function main() {
@@ -54,6 +54,7 @@ async function main() {
   let flag = document.getElementById('flag');
   let correctSoundEffect = document.getElementById('correct-sound-effect');
   let incorrectSoundEffect = document.getElementById('incorrect-sound-effect');
+  let gameOverSoundEffect = document.getElementById('game-over-sound-effect');
   let options = Array.from(document.getElementsByClassName('options'));
 
   flag.src = chosenCountry.flag;
@@ -97,7 +98,8 @@ async function main() {
       nextButton.addEventListener('click', (event) => {
           if (parseInt(page.innerText) >= parseInt(totalPages)) {
             localStorage.setItem('score', score.innerText);
-            window.location.href = '../end';
+            playSound(gameOverSoundEffect)
+            setTimeout(window.location.href = '../end', 2000);
             return;
           }
           page = document.getElementById('page');
