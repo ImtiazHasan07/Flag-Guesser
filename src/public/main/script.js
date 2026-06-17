@@ -1,8 +1,8 @@
 let score = document.getElementById('score');
 let page = document.getElementById('page');
 let continents = localStorage.getItem('continents') ? localStorage.getItem('continents') : ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania'];
-let totalPages = localStorage.getItem('flags-number') ? localStorage.getItem('flags-number') : 25;
-let enableSound = localStorage.getItem('sound') === 'true' ? true : false;
+let totalPages = localStorage.getItem('flags-num') ? localStorage.getItem('flags-num') : 25;
+let enableSound = localStorage.getItem('sound') === 'false' ? false : true;
 
 score.innerText = 0;
 page.innerText = 1;
@@ -48,7 +48,16 @@ function playSound(soundEffect) {
     }
 }
 
+let backButton = document.getElementById('back-button');
+backButton.addEventListener('click', (event) => {
+    window.location.href = '../menu';
+    return;
+  },
+  { once: true }
+);
+
 async function main() {
+  if (totalPages === '0') return;
   let countries = await fetchCountries(continents);
   let chosenCountry = getRandomCountry(countries);
   let flag = document.getElementById('flag');
@@ -58,14 +67,6 @@ async function main() {
   let options = Array.from(document.getElementsByClassName('options'));
 
   flag.src = chosenCountry.flag;
-
-  let backButton = document.getElementById('back-button');
-  backButton.addEventListener('click', (event) => {
-      window.location.href = '../menu';
-      return;
-    },
-    { once: true }
-  );
 
   let correctOption = options[Math.floor(Math.random() * options.length)];
   correctOption.innerText = chosenCountry.name;

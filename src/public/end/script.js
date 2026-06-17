@@ -4,7 +4,7 @@ if (!score) {
     score = 0;
 }
 
-let totalScore = localStorage.getItem('flags-number') ? localStorage.getItem('flags-number') : 25;
+let totalScore = localStorage.getItem('flags-num') ? localStorage.getItem('flags-num') : 25;
 
 document.body.innerHTML = document.body.innerHTML.replace('$score', score);
 document.body.innerHTML = document.body.innerHTML.replace('$total-score', totalScore);

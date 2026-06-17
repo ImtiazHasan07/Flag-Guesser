@@ -43,13 +43,10 @@ html {
 
 .circle {
     display: grid;
-    /* width: 150px; */
-    /* height: 150px; */
     width: 150px;
     padding-top: 35px;
     padding-bottom: 35px;
     font-size: 75px;
-    /* padding: 50px; */
     border-width: 5px;
     border-style: solid;
     border-color: #000000;
@@ -67,18 +64,6 @@ html {
 .total-score {
     background-color: #ffb900;
 }
-
-
-/* .total-score {
-    margin-left: 5%;
-    padding: 10%;
-    background-color: #ffb900;
-    border-radius: 50%;
-} */
-
-/* .score {
-    align-self: center;
-} */
 
 .page {
     margin-right: 1%;

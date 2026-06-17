@@ -23,7 +23,7 @@ html {
     min-height: 50px;
     border-radius: 20px;
     border: none;
-    box-shadow: 1px 1px 5px #000000;
+    box-shadow: 1px 1px 1px #000000;
     cursor: pointer;
 }
 
