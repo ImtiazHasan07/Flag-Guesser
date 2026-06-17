@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Flag Guesser</title>
-        <link rel='stylesheet' href='./public/main/style.css'>
-    </head>
-    <body>
-        <div class='container centre'>
-            <div class='top-container'>
-                <button id='back-button' class='back-button'>◀</button>
-                <h1 class='score content'>Score: <span id='score'>$score</span></h1>
-                <h1 class='page content'><span id='page'>$page</span>/$totalPages</h2>
-            </div>
-            <div id='flag' class='flag'></div>
+
+<head>
+    <title>Flag Guesser</title>
+    <link rel='stylesheet' href='./public/main/style.css'>
+</head>
+
+<body>
+    <div class='container centre'>
+        <div class='top-container'>
+            <button id='back-button' class='back-button'>◀</button>
+            <h1 class='score content'>Score: <span id='score'>$score</span></h1>
+            <h1 class='page content'><span id='page'>$page</span>/$totalPages</h2>
+        </div>
+        <img id='flag' class='flag' src='' alt='flag' draggable='false'></img>
+        <div class='button-container'>
             <button class='button options'>a</button>
             <button class='button options'>b</button>
             <button class='button options'>c</button>
             <button class='button options'>d</button>
             <button id='next-button' class='next-button button'>Next</button>
         </div>
-        <script src='./public/main/script.js'></script>
-    </body>
+    </div>
+    <script src='./public/main/script.js'></script>
+</body>
+
 </html>

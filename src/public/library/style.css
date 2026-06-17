@@ -26,6 +26,7 @@ html {
 }
 
 .scrollbar-container {
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

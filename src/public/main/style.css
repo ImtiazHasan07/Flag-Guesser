@@ -27,10 +27,13 @@ html {
     cursor: pointer;
 }
 
-
 .flag {
-    font-size: 450px;
-    margin-bottom: -15%;
+    width: 90%;
+    min-width: 90%;
+    height: 30%;
+    max-height: 30%;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
 
 .options {
@@ -38,7 +41,7 @@ html {
 }
 
 .next-button {
-    display: fixed;
+    /* position: fixed; */
     background-color: #ffbb00;
     margin-top: 5%;
 }
@@ -66,4 +69,11 @@ html {
 .page {
     margin-right: 1%;
     align-self: flex-end;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

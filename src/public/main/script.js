@@ -1,4 +1,4 @@
-let countries;
+let continents = localStorage.getItem('continents') ? localStorage.getItem('continents') : ['africa', 'asia', 'europe', 'north-america', 'south-america', 'oceania'];
 let score = document.getElementById('score')
 let page = document.getElementById('page')
 let totalPages = 25;
@@ -8,82 +8,101 @@ page.innerText = 1;
 
 document.body.innerHTML = document.body.innerHTML.replace('$totalPages', totalPages);
 
-fetch('https://restcountries.com/v3.1/all')
-    .then((response) => response.json())
-    .then((data) => {
-        countries = data.map((item) => {
-            return {
-                name: item.name.common,
-                codes: [item?.cca2, item?.cca3],
-                flag: item.flag,
-            };
-        })
+function formatString(string) {
+    return string.split(' ').join('-').toLowerCase();
+}
 
-        function main(countries) {
-            let chosenCountry = randomCountry(countries);
-            let flag = document.getElementById('flag')
-            let options = document.getElementsByClassName('options')
-    
-            flag.innerText = chosenCountry.flag
+async function fetchCountries(continents) {
+    let response;
+    try {
+        response = await fetch('https://restcountries.com/v3.1/all');
+    } catch (error) {
+        return;
+    }
+    let data = await response.json();
+    let countries = data.map((item) => ({
+        name: item.name.common,
+        codes: [item?.cca2, item?.cca3],
+        flag: item.flags.png,
+        continent: item.continents[0]
+    })).filter((item) => continents.includes(formatString(item.continent)));
+    return countries
+}
 
-            let backButton = document.getElementById('back-button')
-            backButton.addEventListener('click', (event) => {
-                window.location.href = '../menu' 
-                return
-            }, { once : true })
-    
-            let used = []
-    
-            let correctOption = randomOption(options)
-            correctOption.innerText = chosenCountry.name
-            console.log(correctOption.innerText)
+function getRandomCountry(countries, correctCountry) {
+    let randomCountry = countries.filter((option) => option !== correctCountry)[Math.floor(Math.random() * countries.length)];
+    return randomCountry;
+}
 
-            options = Array.from(options).filter((item) => item !== correctOption)
-    
-            options.forEach((option) => {
-                option.innerText = randomCountry(countries, used).name
-            })
-    
-            let selectedOption;
-            options = document.getElementsByClassName('options')
-            Array.from(options).forEach((option) => {
-                option.addEventListener('click', (event) => {
-                    if (selectedOption) return;
-                    selectedOption = option
-    
-                    if (selectedOption.innerText === correctOption.innerText) {
-                        selectedOption.style['background-color'] = '#009a30'
-                        score = document.getElementById('score')
-                        score.innerText ++
-                    } else {
-                        selectedOption.style['background-color'] = '#df1111'
-                        correctOption.style['background-color'] = '#009a30'
-                    }
-    
-                    let nextButton = document.getElementById('next-button')
-                    nextButton.addEventListener('click', (event) => {
-                        if (parseInt(page.innerText) === parseInt(totalPages)) {
-                        localStorage.setItem('score', score.innerText)
-                        window.location.href = '../end' 
-                        return;
-                        }
-                        page = document.getElementById('page')
-                        page.innerText ++
+function playSound(soundEffect) {
+    let enableSound = localStorage.getItem('sound')
+    if (JSON.parse(enableSound)) {
+        soundEffect.play();
+    }
+}
 
-                        Array.from(options).forEach((option) => {
-                            option.style['background-color'] = '#ffffff'
-                        })
-                        main(countries)
-                    }, { once : true })
-                })
-            })
-        }
+async function main() {
+    let countries = await fetchCountries(continents)
+    let chosenCountry = randomCountry(countries);
+    let flag = document.getElementById('flag')
+    let options = document.getElementsByClassName('options')
 
-        main(countries)
+    flag.src = chosenCountry.flag
 
-    }).catch((error) => {
-        console.log('Error: An error occurred while making the request.', error)
+    let backButton = document.getElementById('back-button')
+    backButton.addEventListener('click', (event) => {
+        window.location.href = '../menu' 
+        return
+    }, { once : true })
+
+    let used = []
+
+    let correctOption = randomOption(options)
+    correctOption.innerText = chosenCountry.name
+    console.log(correctOption.innerText)
+
+    options = Array.from(options).filter((item) => item !== correctOption)
+
+    options.forEach((option) => {
+        option.innerText = randomCountry(countries, used).name
     })
+
+    let selectedOption;
+    options = document.getElementsByClassName('options')
+    Array.from(options).forEach((option) => {
+        option.addEventListener('click', (event) => {
+            if (selectedOption) return;
+            selectedOption = option
+
+            if (selectedOption.innerText === correctOption.innerText) {
+                selectedOption.style['background-color'] = '#009a30'
+                score = document.getElementById('score')
+                score.innerText ++
+            } else {
+                selectedOption.style['background-color'] = '#df1111'
+                correctOption.style['background-color'] = '#009a30'
+            }
+
+            let nextButton = document.getElementById('next-button')
+            nextButton.addEventListener('click', (event) => {
+                if (parseInt(page.innerText) === parseInt(totalPages)) {
+                localStorage.setItem('score', score.innerText)
+                window.location.href = '../end' 
+                return;
+                }
+                page = document.getElementById('page')
+                page.innerText ++
+
+                Array.from(options).forEach((option) => {
+                    option.style['background-color'] = '#ffffff'
+                })
+                main(countries)
+            }, { once : true })
+        })
+    })
+}
+
+main()
 
 function randomCountry(countries, country) {
     let randomCountry = country
