@@ -46,7 +46,7 @@ node .
 Then open your browser and visit:
 
 ```
-http://localhost:3000
+http://localhost:80
 ```
 
 Start guessing flags and try to achieve the highest score possible.
