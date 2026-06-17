@@ -45,7 +45,7 @@ async function main() {
     let countries = await fetchCountries(continents)
     let chosenCountry = randomCountry(countries);
     let flag = document.getElementById('flag')
-    let options = document.getElementsByClassName('options')
+    let options = Array.from(document.getElementsByClassName('options'))
 
     flag.src = chosenCountry.flag
 
@@ -61,15 +61,12 @@ async function main() {
     correctOption.innerText = chosenCountry.name
     console.log(correctOption.innerText)
 
-    options = Array.from(options).filter((item) => item !== correctOption)
-
-    options.forEach((option) => {
+    options.filter((item) => item !== correctOption).forEach((option) => {
         option.innerText = randomCountry(countries, used).name
     })
 
     let selectedOption;
-    options = document.getElementsByClassName('options')
-    Array.from(options).forEach((option) => {
+    options.forEach((option) => {
         option.addEventListener('click', (event) => {
             if (selectedOption) return;
             selectedOption = option
@@ -77,7 +74,7 @@ async function main() {
             if (selectedOption.innerText === correctOption.innerText) {
                 selectedOption.style['background-color'] = '#009a30'
                 score = document.getElementById('score')
-                score.innerText ++
+                score.innerText++
             } else {
                 selectedOption.style['background-color'] = '#df1111'
                 correctOption.style['background-color'] = '#009a30'
@@ -85,7 +82,7 @@ async function main() {
 
             let nextButton = document.getElementById('next-button')
             nextButton.addEventListener('click', (event) => {
-                if (parseInt(page.innerText) === parseInt(totalPages)) {
+                if (parseInt(page.innerText) >= parseInt(totalPages)) {
                 localStorage.setItem('score', score.innerText)
                 window.location.href = '../end' 
                 return;
@@ -93,10 +90,10 @@ async function main() {
                 page = document.getElementById('page')
                 page.innerText ++
 
-                Array.from(options).forEach((option) => {
+                options.forEach((option) => {
                     option.style['background-color'] = '#ffffff'
                 })
-                main(countries)
+                main()
             }, { once : true })
         })
     })
