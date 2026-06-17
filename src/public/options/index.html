@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Flag Guesser</title>
+</head>
+<link rel='stylesheet' href='style.css'>
+
+<body>
+    <div class='container'>
+        <button id='back' class='back'>◀</button>
+        <div class='sound_container'>
+            <h2>SOUND</h2>
+            <input type='checkbox'>
+            <div class='slider round'></div>
+        </div>
+        <div class='flag_num_container'>
+            <form>
+                <h2>NUMBER OF FLAGS</h2>
+                <input type='radio' id='10' name='flag_num' value=10>
+                <label for='10'>10</label>
+                <br>
+                <input type='radio' id='25' name='flag_num' value=25>
+                <label for='25'>25</label>
+                <br>
+                <input type='radio' id='50' name='flag_num' value=50>
+                <label for='50'>50</label>
+                <br>
+                <input type='radio' id='100' name='flag_num' value=100>
+                <label for='100'>100</label>
+                <br>
+                <input type='radio' id='197' name='flag_num' value=197>
+                <label for='197'>197</label>
+            </form>
+        </div>
+        <div class='flags_container'>
+            <h2>FLAGS</h2>
+            <div class='africa_container'>
+                <label for 'africa'>AFRICA</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+            <div class='asia_container'>
+                <label for 'africa'>ASIA</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+            <div class='europe_container'>
+                <label for 'africa'>EUROPE</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+            <div class='north_america_container'>
+                <label for 'africa'>NORTH AMERICA</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+            <div class='south_america_container'>
+                <label for 'africa'>SOUTH AMERICA</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+            <div class='oceania_container'>
+                <label for 'africa'>OCEANIA</label>
+                <input type='checkbox'>
+                <div class='slider round'></div>
+            </div>
+        </div>
+    </div>
+    <script src='script.js'></script>
+</body>
+
+</html>

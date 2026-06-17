@@ -1,0 +1,24 @@
+{
+  "name": "flag-guesser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanGaming101HD/Flag-Guesser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanGaming101HD/Flag-Guesser/issues"
+  },
+  "homepage": "https://github.com/IanGaming101HD/Flag-Guesser#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.6.11"
+  }
+}

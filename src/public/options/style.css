@@ -1,0 +1,22 @@
+html {
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.container {
+    background-color: #33ccff;
+    width: 500px;
+    height: 800px;
+    text-align: center;
+    margin-left: 35%;
+}
+
+.back {
+    display: flex;
+    cursor: pointer;
+    margin-left: 1%;
+    margin-top: 3%;
+    font-size: 30px;
+    background-color: transparent;
+    border: none
+}

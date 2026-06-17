@@ -11,49 +11,42 @@ html {
     margin-left: 35%;
 }
 
-.button {
+button {
     color: #000000;
     font-size: 30px;
     margin: 5px;
     width: 400px;
-    min-height: 50px;
+    height: 50px;
     border-radius: 20px;
     border: none;
     box-shadow: 1px 1px 5px #000000;
     cursor: pointer;
 }
 
-.next {
-    margin-top: 5%
+h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: 750;
 }
 
-.flag {
-    font-size: 450px;
-    margin-bottom: -15%;
+.score {
+    display: table-cell;
+    background-color: #009b2e;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
 }
 
-.options {
-    background-color: #ffffff;
-}
-
-.next {
-    background-color: #ffbb00;
-}
-
-.top-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: -15%;
-}
-
-.back {
-    cursor: pointer;
-    margin-left: 1%;
-    margin-top: 3%;
-    align-self: flex-start;
-    font-size: 30px;
-    background-color: transparent;
-    border: none
+.total_score {
+    display: table-cell;
+    background-color: #ffb900;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
 }
 
 .score {

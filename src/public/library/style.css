@@ -1,0 +1,98 @@
+html {
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.container {
+    background-color: #33ccff;
+    width: 500px;
+    height: 800px;
+    text-align: center;
+    margin-left: 35%;
+}
+
+.flag {
+    font-size: 50px;
+    margin-bottom: -15%;
+}
+
+.top_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -15%;
+}
+
+.scrollbar_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20%;
+    margin-left: 90%;
+}
+
+.library_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    flex-direction: row;
+}
+
+.country_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flag {
+    margin-top: 0;
+    margin-right: 3%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: -50%;
+    /* margin-right: 10%; */
+}
+
+.library_label {
+    margin-top: 1%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.back {
+    cursor: pointer;
+    margin-left: 1%;
+    margin-top: 3%;
+    align-self: flex-start;
+    font-size: 30px;
+    background-color: transparent;
+    border: none
+}
+
+.up {
+    cursor: pointer;
+    margin-bottom: 1000%;
+    font-size: 30px;
+    background-color: transparent;
+    border: none
+}
+
+.down {
+    cursor: pointer;
+    font-size: 30px;
+    background-color: transparent;
+    border: none
+}
+
+.countries_container {
+    margin-left: 5%;
+    overflow-y: scroll;
+    height: 650px;
+    width: 475px;
+}
+
+.bottom_container {
+    margin-top: 20%;
+}
