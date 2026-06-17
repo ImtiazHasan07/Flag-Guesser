@@ -1,17 +1,18 @@
 
-let score = localStorage.getItem('score');
-if (!score) {
-    window.location.href = '../main';
-    score = 0;
-}
+let enableSound = sessionStorage.getItem('sound') ? sessionStorage.getItem('sound') : true;
 function playSound(soundEffect) {
     if (JSON.parse(enableSound)) {
       soundEffect.play();
     }
 }
-
 let gameOverSoundEffect = document.getElementById('game-over-sound-effect');
 playSound(gameOverSoundEffect)
+
+let score = localStorage.getItem('score');
+if (!score) {
+    window.location.href = '../main';
+    score = 0;
+}
 
 let totalScore = localStorage.getItem('flags-number') ? localStorage.getItem('flags-number') : 25;
 
