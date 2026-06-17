@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Flag Guesser</title>
+        <link rel='stylesheet' href='./public/main/style.css'>
+    </head>
+    <body>
+        <div class='container centre'>
+            <div class='top-container'>
+                <img id='back' class='back' src='./public/main/images/back.png'>
+                <h1 class='content score'>Score: <span id='score'>$score</span></h1>
+                <h1 class='content page'><span id='page'>$page</span>/$totalPages</h2>
+            </div>
+            <img id='flag' class='flag' src='' alt='flag' draggable='false'></img>
+            <button class='button options'>a</button>
+            <button class='button options'>b</button>
+            <button class='button options'>c</button>
+            <button class='button options'>d</button>
+            <button id='next-button' class='button next'>Next</button>
+            <audio id='correct-sound-effect' src='./public/main/sounds/correct.mp3'></audio>
+            <audio id='incorrect-sound-effect' src='./public/main/sounds/incorrect.mp3'></audio>
+        </div>
+        <script src='./public/main/script.js'></script>
+    </body>
+</html>
