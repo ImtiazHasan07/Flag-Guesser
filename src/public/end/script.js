@@ -1,12 +1,3 @@
-let enableSound = localStorage.getItem('sound') === 'true' ? true : false;
-function playSound(soundEffect) {
-    if (JSON.parse(enableSound)) {
-      soundEffect.play();
-    }
-}
-let gameOverSoundEffect = document.getElementById('game-over-sound-effect');
-playSound(gameOverSoundEffect)
-
 let score = localStorage.getItem('score');
 if (!score) {
     window.location.href = '../main';
