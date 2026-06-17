@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
 
 app.get('/:page', (req, res) => {
   let page = req.params.page;
-  if (page) return;
+  if (!page) return;
 
   let file;
   try {
